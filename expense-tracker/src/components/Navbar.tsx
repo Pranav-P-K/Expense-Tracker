@@ -1,21 +1,24 @@
 'use client'
-import Link from 'next/link'
-import React, { useState } from 'react'
+import React, {useState} from "react";
+import Link from "next/link";
 
-const Navbar = () => {
+type NavbarProps = {
+  isLogin: boolean;
+  toggleForm: () => void;
+};
+
+const Navbar: React.FC<NavbarProps> = ({ isLogin, toggleForm }) => {
   return (
-    <div className="navbar bg-green-400">
-        <div className="flex-1">
-            <Link href='/' className="btn btn-ghost text-3xl mx-16">Expense Tracker</Link>
-        </div>
-        <div className="flex-none">
-            <ul className="menu menu-horizontal p-4 gap-8 mx-8">
-                <li className='btn bg-orange-400 text-black text-xl border-none hover:bg-orange-500 transition-colors'><Link href='/signup'>SIGN UP</Link></li>
-                <li className='btn bg-orange-400 text-black text-xl border-none hover:bg-orange-500'><Link href='/signin'>LOGIN</Link></li>
-            </ul>
-        </div>
-    </div>
-  )
-}
+    <nav className="flex justify-between items-center p-4 bg-green-400 text-black px-12">
+      <Link href='/' className="btn btn-ghost text-2xl">Expense Tracker</Link>
+      <button 
+        className="p-2 px-12 btn bg-orange-400 text-black text-xl border-none hover:bg-orange-500 transition-colors"
+        onClick={toggleForm}
+      >
+        {isLogin ? 'Signup' : 'Login'}
+      </button>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
