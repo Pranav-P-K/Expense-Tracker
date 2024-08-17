@@ -37,12 +37,3 @@ const HomePage : React.FC<HomeProps> = ({ isLogin }) =>  {
 }
 
 export default HomePage;
-
-/*
-<div className="float-left">
-  <p className="text-6xl ml-36 mb-8">Start<br/> navigating<br/> your finances</p>
-  <p className="text-2xl ml-36 mb-8">Unlock the power of tracking your expenses<br/> 
-    effortlessly with our easy-to-use application </p>
-  <SignIn />
-</div>
-*/
